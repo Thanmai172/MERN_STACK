@@ -9,11 +9,14 @@ const cors = require("cors")
 //load the environmental variables from dotenv file
 dotenv.config();
 
+
 // middleware to parse the json
 app.use(express.json());
 
 // middleware to enabled to cors
-app.use(cors())
+app.use(cors({  
+    origin: 'https://mern-stack-app-1.netlify.app' // Replace with your actual Netlify URL  
+}));
 
 connectDB();
 
